@@ -1,0 +1,26 @@
+{
+    "name": "bmc/uup-ews",
+    "version": "1.0.0",
+    "description": "Microsoft Exchange Web Service (EWS) Library",
+    "type": "library",
+    "keywords": ["exchange", "ews", "uup", "bmc"],
+    "homepage": "http://it.bmc.uu.se/andlov/php/proj/bmc/uup-ews",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Anders Lövgren",
+            "email": "anders.lovgren@bmc.uu.se"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "suggest": {
+        "wsdl2phpgenerator/wsdl2phpgenerator": "^3.2"
+    },
+    "autoload": {
+        "psr-0": {
+            "UUP\\": "source"
+        }
+    }
+}

@@ -1,0 +1,49 @@
+=============================================================================
+    UUP-EWS - Microsoft Exchange Web Service (EWS) Library
+=============================================================================
+
+Notice: The bundled WSDL and XSD-files in config directory might need to be 
+        replaced to match the exchange server running in your organization. 
+
+        When updating WSDL, remember to also re-generate the PHP classes in
+        source/UUP/Exchange/Types
+
+** Update WSDL/XSD files:
+
+    Download service, message and types definitions from the exchange server by running:
+
+        bash$> for f in services.wsdl messages.xsd types.xsd; do \
+                    curl -v --ntlm --user user@example.com \
+                            https://server.example.com/ews/$f > config/$f
+               done
+
+    Append service definition at end of config/services.wsdl. Replace server.example.com
+    with the actual exchange server to provide default host:
+
+        <wsdl:service name="ExchangeServices">
+          <wsdl:port name="ExchangeServicePort" binding="tns:ExchangeServiceBinding">
+            <soap:address location="https://server.example.com/ews/exchange.asmx" />
+          </wsdl:port>
+        </wsdl:service> 
+
+** Update PHP classes:
+
+    1. Use the bundled script to generate PHP classes from WSDL. Requires suggested 
+       composer package wsdl2phpgenerator to be installed first:
+
+       bash$> composer require wsdl2phpgenerator/wsdl2phpgenerator
+       bash$> php bin/generate.php
+
+    2. Download the CLI version of wsdl2phpgenerator, then generate the PHP classes
+       from the WSDL file in the config directory:
+
+       bash$> php ~/wsdl2phpgenerator.phar -i config/services.wsdl \
+                        -o source/UUP/Exchange/Types -n "UUP\\Exchange\\Types" \
+                        --noIncludes --constructorNull --createAccessors
+
+    See documentation of wsdl2phpgenerator for more information:
+
+       https://github.com/wsdl2phpgenerator/wsdl2phpgenerator
+       https://github.com/wsdl2phpgenerator/wsdl2phpgenerator-cli
+
+// Anders Lövgren, 2015-11-19
