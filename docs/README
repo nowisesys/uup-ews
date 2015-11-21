@@ -2,11 +2,13 @@
     UUP-EWS - Microsoft Exchange Web Service (EWS) Library
 =============================================================================
 
-Notice: The bundled WSDL and XSD-files in config directory might need to be 
-        replaced to match the exchange server running in your organization. 
+Notice: 
 
-        When updating WSDL, remember to also re-generate the PHP classes in
-        source/UUP/Exchange/Types
+    The WSDL and XSD-files bundled in config directory might need to be replaced to 
+    match the exchange server running in your organization. 
+
+    When updating WSDL, remember to also re-generate the PHP classes in 
+    source/UUP/Exchange/Types
 
 ** Update WSDL/XSD files:
 
@@ -45,5 +47,13 @@ Notice: The bundled WSDL and XSD-files in config directory might need to be
 
        https://github.com/wsdl2phpgenerator/wsdl2phpgenerator
        https://github.com/wsdl2phpgenerator/wsdl2phpgenerator-cli
+
+**  Test:
+
+    A simple PHP script for testing connection and creation of calendar events can be 
+    found in the bin directory. Run it passing username, password and optional exchange 
+    server hostname:
+
+        $bash> php bin/client.php user@example.com secret exchange.example.com
 
 // Anders Lövgren, 2015-11-19
