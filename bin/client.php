@@ -19,6 +19,8 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use UUP\Exchange\Client\ExchangeServicesClient;
+use UUP\Exchange\Types\BodyType;
+use UUP\Exchange\Types\BodyTypeType;
 use UUP\Exchange\Types\CalendarItemCreateOrDeleteOperationType;
 use UUP\Exchange\Types\CalendarItemType;
 use UUP\Exchange\Types\CreateItemType;
@@ -57,7 +59,7 @@ class Client
                 $calendarItem = new CalendarItemType();
                 $calendarItem->setSubject("Hello World!");
                 $calendarItem->setLocation("Home");
-                $calendarItem->setBody("Some text for message body...");
+                $calendarItem->setBody(new BodyType("Some text for message body...", BodyTypeType::Text));
                 $calendarItem->setReminderIsSet(false);
                 $calendarItem->setIsAllDayEvent(false);
                 $calendarItem->setStart(new DateTime('2015-11-22 13:00:00'));
@@ -70,7 +72,15 @@ class Client
                 $request = new CreateItemType($items);
                 $request->setSendMeetingInvitations(CalendarItemCreateOrDeleteOperationType::SendToNone);
 
-                $this->service->CreateItem($request);
+                $response = $this->service->CreateItem($request);
+                
+                $itemid = $response->getResponseMessages()->getCreateItemResponseMessage()[0]->getItems()->getCalendarItem()[0]->getItemId();
+                
+                printf("Created Calendar Event:\n");
+                printf("-----------------------\n");
+                printf("ID:\t%s\n", $itemid->getId());
+                printf("ChanegeKey:\t%s\n", $itemid->getChangeKey());
+                printf("\n");
         }
 
         public function add($subj, $body, $stime, $etime)
