@@ -50,10 +50,25 @@ Notice:
 
 **  Test:
 
-    A simple PHP script for testing connection and creation of calendar events can be 
-    found in the bin directory. Run it passing username, password and optional exchange 
-    server hostname:
+    A simple PHP script for testing connection and basic CRUD operations for calendar
+    events can be found in the bin directory:
 
-        $bash> php bin/client.php user@example.com secret exchange.example.com
+        $bash> php bin/client.php --user=user@example.com --pass=secret \
+                                  --host=exchange.example.com \
+                                  --find --start="2015-11-25" --end="2015-12-01"
+
+        $bash> php bin/client.php --user=user@example.com --pass=secret \
+                                  --host=exchange.example.com \
+                                  --add --start="2015-11-25" --end="2015-12-01" \
+                                  --title="TEST" --body="Some text..."
+
+        $bash> php bin/client.php --user=user@example.com --pass=secret \
+                                  --host=exchange.example.com \
+                                  --delete --id="AABCurZhAAA="
+
+** Reference:
+
+   How to: Create appointments and meetings by using EWS in Exchange 2013
+   https://msdn.microsoft.com/EN-US/library/office/dn495611%28v=exchg.150%29.aspx
 
 // Anders Lövgren, 2015-11-19
