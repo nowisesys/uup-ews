@@ -137,8 +137,8 @@ class ExchangeServicesClient extends ExchangeServices
                 // 
                 // Optional SSL verification:
                 // 
-                curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, $this->verify);
-                curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, $this->verify);
+                curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, $this->verify ? 1 : 0);
+                curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, $this->verify ? 2 : 0);
 
                 if (!($response = curl_exec($curl))) {
                         throw new \SoapFault("Client", curl_error($curl) . " (" . curl_errno($curl) . ")");
