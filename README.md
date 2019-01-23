@@ -3,7 +3,7 @@
 SOAP client library for communication with the EWS. Most code is auto-generated
 from the WSDL/XSD downloaded from the Excahnge server. 
 
-This project is not really unmaintained (missing usecase) and has only been tested
+This project is not really maintained (missing usecase) and has only been tested
 agains Exchange 2013, but made available in hope of being useful for someone!
 
 ### Notice: 
