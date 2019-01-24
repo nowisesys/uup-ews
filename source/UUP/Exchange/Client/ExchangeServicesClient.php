@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2015 Anders Lövgren (QNET/BMC CompDept).
+ * Copyright (C) 2015 Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University).
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ use UUP\Exchange\Types\ExchangeServices;
  * Based on example code by Nicholas Kreidberg (niczak) on GitHub.
  * @see https://gist.github.com/niczak/2003485
  * 
- * @author Anders Lövgren (QNET/BMC CompDept)
+ * @author Anders Lövgren (Nowise Systems/BMC-IT, Uppsala University)
  * @package UUP
  * @subpackage Exchange
  */
