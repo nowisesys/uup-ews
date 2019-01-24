@@ -1,15 +1,19 @@
 {
-    "name": "bmc/uup-ews",
+    "name": "nowise/uup-ews",
     "version": "0.9.0",
     "description": "Microsoft Exchange Web Service (EWS) Library",
     "type": "library",
     "keywords": ["exchange", "ews", "uup", "bmc"],
-    "homepage": "http://it.bmc.uu.se/andlov/php/proj/bmc/uup-ews",
+    "homepage": "https://nowise.se/oss/uup-ews",
     "license": "Apache-2.0",
     "authors": [
         {
             "name": "Anders Lövgren",
             "email": "anders.lovgren@bmc.uu.se"
+        },
+        {
+            "name": "Anders Lövgren",
+            "email": "andlov@nowise.se"
         }
     ],
     "require": {
