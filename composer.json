@@ -1,6 +1,6 @@
 {
     "name": "nowise/uup-ews",
-    "version": "0.9.0",
+    "version": "0.9.1",
     "description": "Microsoft Exchange Web Service (EWS) Library",
     "type": "library",
     "keywords": ["exchange", "ews", "uup", "bmc"],
