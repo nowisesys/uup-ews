@@ -3,7 +3,7 @@
     "version": "0.9.2",
     "description": "Microsoft Exchange Web Service (EWS) Library",
     "type": "library",
-    "keywords": ["exchange", "ews", "uup", "bmc"],
+    "keywords": ["exchange", "ews", "uup"],
     "homepage": "https://nowise.se/oss/uup/ews",
     "license": "Apache-2.0",
     "authors": [
